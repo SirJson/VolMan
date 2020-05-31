@@ -1,13 +1,14 @@
 # VolMan
-Controlling ALSA Mixer remotely
+VolMan is a tiny .NET Core 3.1 WinForms application that can control the volume of the Unix devices using ALSA and Python.
 
-Not exactly perfect code but maybe an starting point or example for someone else.
+I wrote this application many to scratch my own itch that is why the UI is written in C# and WinForms. The "Protocol" if you want to call it like that is platform agnostic.
 
-volman.py is the server that should have ALSA running.
+Improvements can be made with the daemon, Python was choosen for prototyping and might not be the best for the task at hand. Also making the frontend more multi platform friendly  would be a big improvement as well as documenting the protocol.
 
-VolControl is a WinForms application that can control the volume of the device that is running volman.py
+## Usage
 
-## Example Usage
+Run unix/volman.py on the ALSA Host output you want to control. That host script can run anywhere as long it can receive data on TCP Port 5055.
 
-I use the python script (volman.py) on my audio pi to avoid adjusting my amplifier when switching audio sources.
-Now I can control the volume of all sources within one app without modifying the output of each device individually on each switch.
+### Real world example
+
+I use the python script (volman.py) on my Raspberry Pi in my sound system to avoid adjusting my amplifier when switching between audio sources.
